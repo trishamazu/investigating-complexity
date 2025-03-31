@@ -35,10 +35,11 @@ git clone https://github.com/stephenczhao/CLIP-HBA-Official.git
 ├── Images
 │   ├── Savoias-Dataset     # Savoias images and target complexity scores
 │   └── THINGS              # THINGS images 
-└── Models                  # General and category-specific models
-    ├── GeneralModels       
-    ├── IC9600Models
-    └── SavoiasModels
+├── Models                  # General and category-specific models
+│   ├── GeneralModels
+│   └── IC9600Models
+│   └── SavoiasModels
+└── output                  # Model performance plots
 ```
 
 ### Image Datasets

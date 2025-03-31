@@ -1,4 +1,3 @@
-import os
 import re
 import json
 import optuna
@@ -15,13 +14,14 @@ from datetime import datetime
 from tqdm import tqdm
 from sklearn.model_selection import KFold
 from sklearn.linear_model import LinearRegression
+import os
 
 # ---------------------------
 # Define directories and paths
 # ---------------------------
-EMBEDDING_DIR = "/home/wallacelab/complexity-final/Embeddings/CLIP-HBA/66d/Savoias"
-GT_DIR = "/home/wallacelab/complexity-final/Images/Savoias-Dataset/GroundTruth/csv"
-OUTPUT_DIR = "/home/wallacelab/complexity-final/output/Savoias_output/cross_attention/Run 5"
+EMBEDDING_DIR = "/home/wallacelab/investigating-complexity/Embeddings/CLIP-HBA/Savoias"
+GT_DIR = "/home/wallacelab/investigating-complexity/Images/Savoias-Dataset/GroundTruth/csv"
+OUTPUT_DIR = "/home/wallacelab/investigating-complexity/output/CLIP-HBA/SavoiasOutput/CrossAttention/Scenes/Run4"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ---------------------------
@@ -148,39 +148,65 @@ def generate_attention_heatmap(model, embedding, category, output_dir, device):
 # ---------------------------
 # Function to evaluate model performance
 # ---------------------------
-def evaluate_model(model, X_test, y_test, category, output_dir, device):
+def evaluate_model(model, X_test, y_test, category, output_dir, device, image_names=None):
     model.eval()
     test_data = torch.tensor(X_test, dtype=torch.float32).to(device)
-    
-    # Get predictions
+
     with torch.no_grad():
         predictions, _ = model(test_data)
         predictions = predictions.cpu().numpy().flatten()
-    
-    # Get actual values
+
     actual = y_test.cpu().numpy().flatten()
     
     # Calculate Spearman correlation
     spearman_corr, p_value = spearmanr(actual, predictions)
-    
+
     # Save evaluation metrics
     results = {
         "spearman_correlation": float(spearman_corr),
         "p_value": float(p_value)
     }
-    
+
     with open(os.path.join(output_dir, "results.json"), "w") as f:
         json.dump(results, f, indent=4)
-    
+
     print(f"Spearman Correlation on Test Set: {spearman_corr:.4f}")
-    
-    # Calculate line of best fit
+
+    attention_contributions = []
+    for i in range(len(X_test)):
+        embedding_tensor = torch.tensor(X_test[i], dtype=torch.float32).unsqueeze(0).to(device)
+        _, attn_weights = model(embedding_tensor)
+        attn_weights = attn_weights.detach().cpu().numpy()  # Shape: (batch, num_heads, hidden_dim)
+        avg_weights = attn_weights[0].mean(axis=0)  # Shape: (hidden_dim,)
+
+        # Average over heads to get per-dimension contribution
+        avg_weights = attn_weights.mean(axis=0)  # Shape: (hidden_dim,)
+
+        # Convert to a list for JSON/csv storage
+        contribution_dict = {f"dim_{i}": float(w) for i, w in enumerate(avg_weights)}
+        attention_contributions.append(contribution_dict)
+
+    image_list = image_names if image_names is not None else [f"img_{i}" for i in range(len(predictions))]
+
+    df = pd.DataFrame({
+        "image_name": image_list,
+        "ground_truth_complexity": actual,
+        "predicted_complexity": predictions,
+        "top_contributing_dims": [
+            sorted(attn.items(), key=lambda x: x[1], reverse=True)[:5]  # top 5 dims per image
+            for attn in attention_contributions
+        ]
+    })
+
+    df.to_csv(os.path.join(output_dir, "test_predictions.csv"), index=False)
+    print(f"Saved predictions CSV to {os.path.join(output_dir, 'test_predictions.csv')}")
+
+    # Plot prediction vs GT
     actual_reshaped = actual.reshape(-1, 1)
     regressor = LinearRegression()
     regressor.fit(actual_reshaped, predictions)
     line_of_best_fit = regressor.predict(actual_reshaped)
-    
-    # Plot and save image
+
     plt.figure(figsize=(8, 6), dpi=300)
     plt.scatter(actual, predictions, alpha=0.6, label="Predictions")
     plt.plot(actual, line_of_best_fit, color="blue", linestyle="-", label="Line of Best Fit")
@@ -197,14 +223,13 @@ def evaluate_model(model, X_test, y_test, category, output_dir, device):
     plt.title(f"Predicted vs Ground Truth Complexity Scores ({category})")
     plt.legend()
     plt.tight_layout()
-    
-    # Save plot in output
+
     plot_path = os.path.join(output_dir, "pred_vs_gt.png")
     plt.savefig(plot_path)
     plt.close()
-    
+
     print(f"Performance plot saved to {plot_path}")
-    
+
     return spearman_corr
 
 # ---------------------------
@@ -298,8 +323,10 @@ def train_pipeline():
         example_embedding = X_test[0]
         generate_attention_heatmap(model, example_embedding, category, category_output_dir, device)
         
+        image_names = embeddings_df["Image"].values[-len(X_test):] if "Image" in embeddings_df.columns else None
+
         # Evaluate model on test set and generate performance plot
-        spearman_corr = evaluate_model(model, X_test, y_test, category, category_output_dir, device)
+        spearman_corr = evaluate_model(model, X_test, y_test, category, category_output_dir, device, image_names)
         
         # Store results for this category
         overall_results[category] = {
@@ -402,8 +429,9 @@ def cross_val_pipeline(config, n_splits=5):
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
     fold_results = {}
 
-    all_preds = []
-    all_actuals = []
+    all_image_names = []
+    all_pred_dict = {}  # image_name -> list of predictions
+    all_actual_dict = {}  # image_name -> actual value
 
     for fold, (train_index, test_index) in enumerate(kf.split(X), 1):
         print(f"\n--- Fold {fold}/{n_splits} ---")
@@ -454,16 +482,44 @@ def cross_val_pipeline(config, n_splits=5):
         model.eval()
         with torch.no_grad():
             preds, _ = model(torch.tensor(X_test, dtype=torch.float32).to(device))
-        all_preds.extend(preds.cpu().numpy().flatten())
-        all_actuals.extend(y_test.numpy().flatten())
+        preds = preds.cpu().numpy().flatten()
+        actuals = y_test.numpy().flatten()
+
+        # Get image names
+        image_names = embeddings_df["Image"].values[test_index] if "Image" in embeddings_df.columns else [f"img_{i}" for i in test_index]
+
+        for name, pred, actual in zip(image_names, preds, actuals):
+            all_pred_dict.setdefault(name, []).append(pred)
+            all_actual_dict[name] = actual
+            all_image_names.append(name)
+
+    # Save averaged predictions
+    final_preds = []
+    final_actuals = []
+    final_image_names = []
+
+    for name in sorted(set(all_image_names)):
+        avg_pred = np.mean(all_pred_dict[name])
+        actual = all_actual_dict[name]
+        final_image_names.append(name)
+        final_preds.append(avg_pred)
+        final_actuals.append(actual)
+
+    df = pd.DataFrame({
+        "image_name": final_image_names,
+        "ground_truth_complexity": final_actuals,
+        "predicted_complexity": final_preds
+    })
+    df.to_csv(os.path.join(OUTPUT_DIR, "test_predictions.csv"), index=False)
+    print(f"Saved averaged predictions to test_predictions.csv")
 
     # Save all fold results
     with open(os.path.join(OUTPUT_DIR, f"{category}_crossval_results.json"), "w") as f:
         json.dump(fold_results, f, indent=4)
 
     # Final average correlation plot
-    all_preds = np.array(all_preds)
-    all_actuals = np.array(all_actuals)
+    all_preds = np.array(final_preds)
+    all_actuals = np.array(final_actuals)
     spearman_corr, _ = spearmanr(all_actuals, all_preds)
 
     actual_reshaped = all_actuals.reshape(-1, 1)
@@ -516,4 +572,3 @@ if __name__ == "__main__":
     # Save best params
     #with open(os.path.join(OUTPUT_DIR, "optuna_best_params_scenes.json"), "w") as f:
         #json.dump(study.best_trial.params, f, indent=4)
-

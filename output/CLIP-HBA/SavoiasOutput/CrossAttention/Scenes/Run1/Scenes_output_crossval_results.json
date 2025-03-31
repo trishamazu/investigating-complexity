@@ -1,0 +1,22 @@
+{
+    "fold_1": {
+        "spearman_correlation": 0.7644740849024164,
+        "best_val_loss": 248.275146484375
+    },
+    "fold_2": {
+        "spearman_correlation": 0.7464452634703445,
+        "best_val_loss": 128.35459899902344
+    },
+    "fold_3": {
+        "spearman_correlation": 0.6129592598234415,
+        "best_val_loss": 289.4176940917969
+    },
+    "fold_4": {
+        "spearman_correlation": 0.5346349637008828,
+        "best_val_loss": 192.31069946289062
+    },
+    "fold_5": {
+        "spearman_correlation": 0.6429715140299703,
+        "best_val_loss": 322.22467041015625
+    }
+}
