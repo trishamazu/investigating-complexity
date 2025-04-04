@@ -21,7 +21,7 @@ import os
 # ---------------------------
 EMBEDDING_DIR = "/home/wallacelab/investigating-complexity/Embeddings/CLIP-HBA/Savoias"
 GT_DIR = "/home/wallacelab/investigating-complexity/Images/Savoias-Dataset/GroundTruth/csv"
-OUTPUT_DIR = "/home/wallacelab/investigating-complexity/output/CLIP-HBA/SavoiasOutput/CrossAttention/Art/Run1"
+OUTPUT_DIR = "/home/wallacelab/investigating-complexity/output/CLIP-HBA/SavoiasOutput/CrossAttention/Objects/Run1"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ---------------------------
@@ -550,15 +550,15 @@ def cross_val_pipeline(config, n_splits=5):
 
 if __name__ == "__main__":
     best_config = {
-        "learning_rate": 0.0061646891748960595,
-        "weight_decay": 0.00020149422746285238,
-        "batch_size": 8,
-        "num_heads": 8,
+        "learning_rate": 0.0031696926815437546,
+        "weight_decay": 2.1328034278612927e-05,
+        "batch_size": 32,
+        "num_heads": 4,
         "hidden_dim": 256,
-        "ffn_dim": 64,
-        "dropout": 0.4745104747905925,
+        "ffn_dim": 128,
+        "dropout": 0.08152190627647334,
         "num_epochs": 150,
-        "early_stopping_patience": 15                                                   
+        "early_stopping_patience": 15
     }
 
     cross_val_pipeline(best_config, n_splits=5)
