@@ -1,0 +1,15 @@
+name: complexity_minimal
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - pandas
+  - scikit-learn
+  - joblib
+  - pytorch
+  - pip
+  - pip:
+      - transformers
