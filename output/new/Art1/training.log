@@ -1,0 +1,119 @@
+2025-04-21 14:06:35,206 - INFO - Using device: cuda
+2025-04-21 14:06:35,207 - INFO - Set random seeds to 42
+2025-04-21 14:06:35,225 - INFO - Saved training feature mean baseline to /home/wallacelab/investigating-complexity/output/run_20250421_140635/train_feature_mean.pt
+2025-04-21 14:06:35,229 - INFO - Using AttnPool instead of Mean Pooling.
+2025-04-21 14:06:36,641 - INFO - Starting training with validation...
+2025-04-21 14:06:37,738 - INFO - Epoch [1/100], Train Loss: 0.0548, Val Loss: 0.0612, Val SRCC: -0.1379, Val PCC: -0.0132, Val RMSE: 0.2474, Val RMAE: 0.4465
+2025-04-21 14:06:37,941 - INFO - Epoch [2/100], Train Loss: 0.0532, Val Loss: 0.0617, Val SRCC: -0.0064, Val PCC: 0.0767, Val RMSE: 0.2484, Val RMAE: 0.4489
+2025-04-21 14:06:38,137 - INFO - Epoch [3/100], Train Loss: 0.0530, Val Loss: 0.0611, Val SRCC: 0.0347, Val PCC: 0.1099, Val RMSE: 0.2471, Val RMAE: 0.4478
+2025-04-21 14:06:38,326 - INFO - Epoch [4/100], Train Loss: 0.0526, Val Loss: 0.0606, Val SRCC: 0.1108, Val PCC: 0.1197, Val RMSE: 0.2462, Val RMAE: 0.4474
+2025-04-21 14:06:38,521 - INFO - Epoch [5/100], Train Loss: 0.0524, Val Loss: 0.0602, Val SRCC: 0.1021, Val PCC: 0.1304, Val RMSE: 0.2454, Val RMAE: 0.4466
+2025-04-21 14:06:38,743 - INFO - Epoch [6/100], Train Loss: 0.0515, Val Loss: 0.0600, Val SRCC: 0.1276, Val PCC: 0.1361, Val RMSE: 0.2450, Val RMAE: 0.4468
+2025-04-21 14:06:39,011 - INFO - Epoch [7/100], Train Loss: 0.0508, Val Loss: 0.0599, Val SRCC: 0.0903, Val PCC: 0.1270, Val RMSE: 0.2447, Val RMAE: 0.4468
+2025-04-21 14:06:39,274 - INFO - Epoch [8/100], Train Loss: 0.0500, Val Loss: 0.0597, Val SRCC: 0.1042, Val PCC: 0.1346, Val RMSE: 0.2443, Val RMAE: 0.4468
+2025-04-21 14:06:39,536 - INFO - Epoch [9/100], Train Loss: 0.0493, Val Loss: 0.0596, Val SRCC: 0.0957, Val PCC: 0.1443, Val RMSE: 0.2442, Val RMAE: 0.4470
+2025-04-21 14:06:39,809 - INFO - Epoch [10/100], Train Loss: 0.0484, Val Loss: 0.0592, Val SRCC: 0.1077, Val PCC: 0.1656, Val RMSE: 0.2433, Val RMAE: 0.4427
+2025-04-21 14:06:40,083 - INFO - Epoch [11/100], Train Loss: 0.0463, Val Loss: 0.0598, Val SRCC: 0.1103, Val PCC: 0.1683, Val RMSE: 0.2446, Val RMAE: 0.4480
+2025-04-21 14:06:40,294 - INFO - Epoch [12/100], Train Loss: 0.0453, Val Loss: 0.0593, Val SRCC: 0.1501, Val PCC: 0.1864, Val RMSE: 0.2435, Val RMAE: 0.4395
+2025-04-21 14:06:40,442 - INFO - Epoch [13/100], Train Loss: 0.0440, Val Loss: 0.0611, Val SRCC: 0.1732, Val PCC: 0.1995, Val RMSE: 0.2471, Val RMAE: 0.4558
+2025-04-21 14:06:40,617 - INFO - Epoch [14/100], Train Loss: 0.0423, Val Loss: 0.0595, Val SRCC: 0.2115, Val PCC: 0.2103, Val RMSE: 0.2439, Val RMAE: 0.4422
+2025-04-21 14:06:40,840 - INFO - Epoch [15/100], Train Loss: 0.0401, Val Loss: 0.0598, Val SRCC: 0.2254, Val PCC: 0.2324, Val RMSE: 0.2446, Val RMAE: 0.4490
+2025-04-21 14:06:41,069 - INFO - Epoch [16/100], Train Loss: 0.0386, Val Loss: 0.0597, Val SRCC: 0.2445, Val PCC: 0.2434, Val RMSE: 0.2443, Val RMAE: 0.4481
+2025-04-21 14:06:41,300 - INFO - Epoch [17/100], Train Loss: 0.0369, Val Loss: 0.0590, Val SRCC: 0.3066, Val PCC: 0.2748, Val RMSE: 0.2428, Val RMAE: 0.4477
+2025-04-21 14:06:41,517 - INFO - Epoch [18/100], Train Loss: 0.0350, Val Loss: 0.0581, Val SRCC: 0.3118, Val PCC: 0.2954, Val RMSE: 0.2409, Val RMAE: 0.4423
+2025-04-21 14:06:41,769 - INFO - Epoch [19/100], Train Loss: 0.0337, Val Loss: 0.0575, Val SRCC: 0.3278, Val PCC: 0.3276, Val RMSE: 0.2397, Val RMAE: 0.4427
+2025-04-21 14:06:42,044 - INFO - Epoch [20/100], Train Loss: 0.0334, Val Loss: 0.0567, Val SRCC: 0.3428, Val PCC: 0.3405, Val RMSE: 0.2382, Val RMAE: 0.4381
+2025-04-21 14:06:42,294 - INFO - Epoch [21/100], Train Loss: 0.0313, Val Loss: 0.0568, Val SRCC: 0.3619, Val PCC: 0.3587, Val RMSE: 0.2383, Val RMAE: 0.4358
+2025-04-21 14:06:42,549 - INFO - Epoch [22/100], Train Loss: 0.0303, Val Loss: 0.0573, Val SRCC: 0.3592, Val PCC: 0.3569, Val RMSE: 0.2394, Val RMAE: 0.4380
+2025-04-21 14:06:42,810 - INFO - Epoch [23/100], Train Loss: 0.0296, Val Loss: 0.0547, Val SRCC: 0.4296, Val PCC: 0.3903, Val RMSE: 0.2339, Val RMAE: 0.4341
+2025-04-21 14:06:43,011 - INFO - Epoch [24/100], Train Loss: 0.0284, Val Loss: 0.0550, Val SRCC: 0.4075, Val PCC: 0.4015, Val RMSE: 0.2346, Val RMAE: 0.4322
+2025-04-21 14:06:43,173 - INFO - Epoch [25/100], Train Loss: 0.0267, Val Loss: 0.0545, Val SRCC: 0.3980, Val PCC: 0.4077, Val RMSE: 0.2335, Val RMAE: 0.4336
+2025-04-21 14:06:43,388 - INFO - Epoch [26/100], Train Loss: 0.0268, Val Loss: 0.0532, Val SRCC: 0.4156, Val PCC: 0.4239, Val RMSE: 0.2307, Val RMAE: 0.4324
+2025-04-21 14:06:43,643 - INFO - Epoch [27/100], Train Loss: 0.0261, Val Loss: 0.0524, Val SRCC: 0.4256, Val PCC: 0.4391, Val RMSE: 0.2288, Val RMAE: 0.4307
+2025-04-21 14:06:43,889 - INFO - Epoch [28/100], Train Loss: 0.0258, Val Loss: 0.0530, Val SRCC: 0.4206, Val PCC: 0.4525, Val RMSE: 0.2301, Val RMAE: 0.4280
+2025-04-21 14:06:44,174 - INFO - Epoch [29/100], Train Loss: 0.0252, Val Loss: 0.0524, Val SRCC: 0.4285, Val PCC: 0.4483, Val RMSE: 0.2289, Val RMAE: 0.4304
+2025-04-21 14:06:44,434 - INFO - Epoch [30/100], Train Loss: 0.0244, Val Loss: 0.0510, Val SRCC: 0.4454, Val PCC: 0.4600, Val RMSE: 0.2257, Val RMAE: 0.4284
+2025-04-21 14:06:44,699 - INFO - Epoch [31/100], Train Loss: 0.0252, Val Loss: 0.0508, Val SRCC: 0.4475, Val PCC: 0.4718, Val RMSE: 0.2254, Val RMAE: 0.4261
+2025-04-21 14:06:44,950 - INFO - Epoch [32/100], Train Loss: 0.0231, Val Loss: 0.0509, Val SRCC: 0.4463, Val PCC: 0.4684, Val RMSE: 0.2257, Val RMAE: 0.4275
+2025-04-21 14:06:45,228 - INFO - Epoch [33/100], Train Loss: 0.0232, Val Loss: 0.0494, Val SRCC: 0.4504, Val PCC: 0.4868, Val RMSE: 0.2222, Val RMAE: 0.4247
+2025-04-21 14:06:45,496 - INFO - Epoch [34/100], Train Loss: 0.0220, Val Loss: 0.0498, Val SRCC: 0.4573, Val PCC: 0.4830, Val RMSE: 0.2232, Val RMAE: 0.4251
+2025-04-21 14:06:45,702 - INFO - Epoch [35/100], Train Loss: 0.0220, Val Loss: 0.0498, Val SRCC: 0.4518, Val PCC: 0.4872, Val RMSE: 0.2232, Val RMAE: 0.4234
+2025-04-21 14:06:45,890 - INFO - Epoch [36/100], Train Loss: 0.0213, Val Loss: 0.0498, Val SRCC: 0.4467, Val PCC: 0.4908, Val RMSE: 0.2231, Val RMAE: 0.4237
+2025-04-21 14:06:46,153 - INFO - Epoch [37/100], Train Loss: 0.0212, Val Loss: 0.0511, Val SRCC: 0.4854, Val PCC: 0.4988, Val RMSE: 0.2260, Val RMAE: 0.4246
+2025-04-21 14:06:46,348 - INFO - Epoch [38/100], Train Loss: 0.0209, Val Loss: 0.0501, Val SRCC: 0.4640, Val PCC: 0.4965, Val RMSE: 0.2238, Val RMAE: 0.4233
+2025-04-21 14:06:46,594 - INFO - Epoch [39/100], Train Loss: 0.0205, Val Loss: 0.0537, Val SRCC: 0.4639, Val PCC: 0.4849, Val RMSE: 0.2318, Val RMAE: 0.4298
+2025-04-21 14:06:46,860 - INFO - Epoch [40/100], Train Loss: 0.0195, Val Loss: 0.0502, Val SRCC: 0.4417, Val PCC: 0.4922, Val RMSE: 0.2240, Val RMAE: 0.4248
+2025-04-21 14:06:47,127 - INFO - Epoch [41/100], Train Loss: 0.0214, Val Loss: 0.0501, Val SRCC: 0.4481, Val PCC: 0.4898, Val RMSE: 0.2239, Val RMAE: 0.4257
+2025-04-21 14:06:47,401 - INFO - Epoch [42/100], Train Loss: 0.0214, Val Loss: 0.0499, Val SRCC: 0.4527, Val PCC: 0.4908, Val RMSE: 0.2233, Val RMAE: 0.4254
+2025-04-21 14:06:47,653 - INFO - Epoch [43/100], Train Loss: 0.0190, Val Loss: 0.0497, Val SRCC: 0.4616, Val PCC: 0.4941, Val RMSE: 0.2229, Val RMAE: 0.4255
+2025-04-21 14:06:47,929 - INFO - Epoch [44/100], Train Loss: 0.0180, Val Loss: 0.0489, Val SRCC: 0.4796, Val PCC: 0.5136, Val RMSE: 0.2212, Val RMAE: 0.4227
+2025-04-21 14:06:48,211 - INFO - Epoch [45/100], Train Loss: 0.0175, Val Loss: 0.0507, Val SRCC: 0.5036, Val PCC: 0.5213, Val RMSE: 0.2252, Val RMAE: 0.4250
+2025-04-21 14:06:48,364 - INFO - Epoch [46/100], Train Loss: 0.0170, Val Loss: 0.0499, Val SRCC: 0.4791, Val PCC: 0.5023, Val RMSE: 0.2234, Val RMAE: 0.4253
+2025-04-21 14:06:48,564 - INFO - Epoch [47/100], Train Loss: 0.0172, Val Loss: 0.0492, Val SRCC: 0.4716, Val PCC: 0.5047, Val RMSE: 0.2219, Val RMAE: 0.4233
+2025-04-21 14:06:48,821 - INFO - Epoch [48/100], Train Loss: 0.0172, Val Loss: 0.0500, Val SRCC: 0.4724, Val PCC: 0.5054, Val RMSE: 0.2235, Val RMAE: 0.4244
+2025-04-21 14:06:49,051 - INFO - Epoch [49/100], Train Loss: 0.0161, Val Loss: 0.0507, Val SRCC: 0.4686, Val PCC: 0.5069, Val RMSE: 0.2252, Val RMAE: 0.4289
+2025-04-21 14:06:49,360 - INFO - Epoch [50/100], Train Loss: 0.0170, Val Loss: 0.0488, Val SRCC: 0.5062, Val PCC: 0.5237, Val RMSE: 0.2210, Val RMAE: 0.4253
+2025-04-21 14:06:49,634 - INFO - Epoch [51/100], Train Loss: 0.0179, Val Loss: 0.0507, Val SRCC: 0.4492, Val PCC: 0.4930, Val RMSE: 0.2253, Val RMAE: 0.4285
+2025-04-21 14:06:49,897 - INFO - Epoch [52/100], Train Loss: 0.0159, Val Loss: 0.0523, Val SRCC: 0.4509, Val PCC: 0.4894, Val RMSE: 0.2287, Val RMAE: 0.4334
+2025-04-21 14:06:50,150 - INFO - Epoch [53/100], Train Loss: 0.0153, Val Loss: 0.0520, Val SRCC: 0.4580, Val PCC: 0.5024, Val RMSE: 0.2280, Val RMAE: 0.4317
+2025-04-21 14:06:50,427 - INFO - Epoch [54/100], Train Loss: 0.0153, Val Loss: 0.0514, Val SRCC: 0.4554, Val PCC: 0.5019, Val RMSE: 0.2267, Val RMAE: 0.4325
+2025-04-21 14:06:50,709 - INFO - Epoch [55/100], Train Loss: 0.0162, Val Loss: 0.0500, Val SRCC: 0.4941, Val PCC: 0.5242, Val RMSE: 0.2235, Val RMAE: 0.4302
+2025-04-21 14:06:50,932 - INFO - Epoch [56/100], Train Loss: 0.0148, Val Loss: 0.0499, Val SRCC: 0.4588, Val PCC: 0.5054, Val RMSE: 0.2234, Val RMAE: 0.4282
+2025-04-21 14:06:51,122 - INFO - Epoch [57/100], Train Loss: 0.0158, Val Loss: 0.0498, Val SRCC: 0.4512, Val PCC: 0.5020, Val RMSE: 0.2232, Val RMAE: 0.4288
+2025-04-21 14:06:51,337 - INFO - Epoch [58/100], Train Loss: 0.0178, Val Loss: 0.0514, Val SRCC: 0.4431, Val PCC: 0.4861, Val RMSE: 0.2266, Val RMAE: 0.4302
+2025-04-21 14:06:51,568 - INFO - Epoch [59/100], Train Loss: 0.0147, Val Loss: 0.0511, Val SRCC: 0.4451, Val PCC: 0.4840, Val RMSE: 0.2260, Val RMAE: 0.4308
+2025-04-21 14:06:51,809 - INFO - Epoch [60/100], Train Loss: 0.0152, Val Loss: 0.0506, Val SRCC: 0.4579, Val PCC: 0.4938, Val RMSE: 0.2250, Val RMAE: 0.4289
+2025-04-21 14:06:52,093 - INFO - Epoch [61/100], Train Loss: 0.0163, Val Loss: 0.0466, Val SRCC: 0.4888, Val PCC: 0.5342, Val RMSE: 0.2159, Val RMAE: 0.4223
+2025-04-21 14:06:52,359 - INFO - Epoch [62/100], Train Loss: 0.0151, Val Loss: 0.0510, Val SRCC: 0.4993, Val PCC: 0.5403, Val RMSE: 0.2259, Val RMAE: 0.4308
+2025-04-21 14:06:52,634 - INFO - Epoch [63/100], Train Loss: 0.0146, Val Loss: 0.0621, Val SRCC: 0.4827, Val PCC: 0.5061, Val RMSE: 0.2492, Val RMAE: 0.4541
+2025-04-21 14:06:52,884 - INFO - Epoch [64/100], Train Loss: 0.0148, Val Loss: 0.0478, Val SRCC: 0.4885, Val PCC: 0.5265, Val RMSE: 0.2186, Val RMAE: 0.4266
+2025-04-21 14:06:53,154 - INFO - Epoch [65/100], Train Loss: 0.0141, Val Loss: 0.0494, Val SRCC: 0.4941, Val PCC: 0.5356, Val RMSE: 0.2224, Val RMAE: 0.4273
+2025-04-21 14:06:53,434 - INFO - Epoch [66/100], Train Loss: 0.0127, Val Loss: 0.0483, Val SRCC: 0.4706, Val PCC: 0.5245, Val RMSE: 0.2198, Val RMAE: 0.4268
+2025-04-21 14:06:53,628 - INFO - Epoch [67/100], Train Loss: 0.0130, Val Loss: 0.0508, Val SRCC: 0.4429, Val PCC: 0.5014, Val RMSE: 0.2254, Val RMAE: 0.4329
+2025-04-21 14:06:53,821 - INFO - Epoch [68/100], Train Loss: 0.0131, Val Loss: 0.0514, Val SRCC: 0.4449, Val PCC: 0.5003, Val RMSE: 0.2268, Val RMAE: 0.4323
+2025-04-21 14:06:54,041 - INFO - Epoch [69/100], Train Loss: 0.0136, Val Loss: 0.0537, Val SRCC: 0.4666, Val PCC: 0.5169, Val RMSE: 0.2318, Val RMAE: 0.4380
+2025-04-21 14:06:54,266 - INFO - Epoch [70/100], Train Loss: 0.0135, Val Loss: 0.0532, Val SRCC: 0.4724, Val PCC: 0.5189, Val RMSE: 0.2306, Val RMAE: 0.4357
+2025-04-21 14:06:54,502 - INFO - Epoch [71/100], Train Loss: 0.0130, Val Loss: 0.0515, Val SRCC: 0.4790, Val PCC: 0.5276, Val RMSE: 0.2269, Val RMAE: 0.4309
+2025-04-21 14:06:54,773 - INFO - Epoch [72/100], Train Loss: 0.0134, Val Loss: 0.0488, Val SRCC: 0.4788, Val PCC: 0.5392, Val RMSE: 0.2208, Val RMAE: 0.4273
+2025-04-21 14:06:55,036 - INFO - Epoch [73/100], Train Loss: 0.0120, Val Loss: 0.0515, Val SRCC: 0.4801, Val PCC: 0.5272, Val RMSE: 0.2270, Val RMAE: 0.4310
+2025-04-21 14:06:55,304 - INFO - Epoch [74/100], Train Loss: 0.0119, Val Loss: 0.0517, Val SRCC: 0.4941, Val PCC: 0.5357, Val RMSE: 0.2274, Val RMAE: 0.4337
+2025-04-21 14:06:55,561 - INFO - Epoch [75/100], Train Loss: 0.0120, Val Loss: 0.0479, Val SRCC: 0.4825, Val PCC: 0.5477, Val RMSE: 0.2188, Val RMAE: 0.4259
+2025-04-21 14:06:55,840 - INFO - Epoch [76/100], Train Loss: 0.0122, Val Loss: 0.0496, Val SRCC: 0.4853, Val PCC: 0.5463, Val RMSE: 0.2228, Val RMAE: 0.4288
+2025-04-21 14:06:56,111 - INFO - Epoch [77/100], Train Loss: 0.0115, Val Loss: 0.0489, Val SRCC: 0.4694, Val PCC: 0.5443, Val RMSE: 0.2211, Val RMAE: 0.4275
+2025-04-21 14:06:56,298 - INFO - Epoch [78/100], Train Loss: 0.0107, Val Loss: 0.0494, Val SRCC: 0.4911, Val PCC: 0.5486, Val RMSE: 0.2224, Val RMAE: 0.4263
+2025-04-21 14:06:56,501 - INFO - Epoch [79/100], Train Loss: 0.0115, Val Loss: 0.0518, Val SRCC: 0.4839, Val PCC: 0.5452, Val RMSE: 0.2275, Val RMAE: 0.4337
+2025-04-21 14:06:56,767 - INFO - Epoch [80/100], Train Loss: 0.0113, Val Loss: 0.0523, Val SRCC: 0.4738, Val PCC: 0.5431, Val RMSE: 0.2287, Val RMAE: 0.4352
+2025-04-21 14:06:56,974 - INFO - Epoch [81/100], Train Loss: 0.0124, Val Loss: 0.0611, Val SRCC: 0.4878, Val PCC: 0.5335, Val RMSE: 0.2473, Val RMAE: 0.4492
+2025-04-21 14:06:57,228 - INFO - Epoch [82/100], Train Loss: 0.0143, Val Loss: 0.0561, Val SRCC: 0.4903, Val PCC: 0.5361, Val RMSE: 0.2369, Val RMAE: 0.4413
+2025-04-21 14:06:57,493 - INFO - Epoch [83/100], Train Loss: 0.0120, Val Loss: 0.0558, Val SRCC: 0.4747, Val PCC: 0.5162, Val RMSE: 0.2362, Val RMAE: 0.4416
+2025-04-21 14:06:57,762 - INFO - Epoch [84/100], Train Loss: 0.0115, Val Loss: 0.0512, Val SRCC: 0.4594, Val PCC: 0.5156, Val RMSE: 0.2263, Val RMAE: 0.4328
+2025-04-21 14:06:58,033 - INFO - Epoch [85/100], Train Loss: 0.0103, Val Loss: 0.0528, Val SRCC: 0.4886, Val PCC: 0.5339, Val RMSE: 0.2298, Val RMAE: 0.4342
+2025-04-21 14:06:58,294 - INFO - Epoch [86/100], Train Loss: 0.0116, Val Loss: 0.0488, Val SRCC: 0.4628, Val PCC: 0.5321, Val RMSE: 0.2209, Val RMAE: 0.4294
+2025-04-21 14:06:58,569 - INFO - Epoch [87/100], Train Loss: 0.0112, Val Loss: 0.0483, Val SRCC: 0.4666, Val PCC: 0.5370, Val RMSE: 0.2199, Val RMAE: 0.4295
+2025-04-21 14:06:58,834 - INFO - Epoch [88/100], Train Loss: 0.0115, Val Loss: 0.0516, Val SRCC: 0.4645, Val PCC: 0.5234, Val RMSE: 0.2271, Val RMAE: 0.4339
+2025-04-21 14:06:59,024 - INFO - Epoch [89/100], Train Loss: 0.0105, Val Loss: 0.0510, Val SRCC: 0.4645, Val PCC: 0.5286, Val RMSE: 0.2259, Val RMAE: 0.4323
+2025-04-21 14:06:59,284 - INFO - Epoch [90/100], Train Loss: 0.0102, Val Loss: 0.0500, Val SRCC: 0.4736, Val PCC: 0.5402, Val RMSE: 0.2235, Val RMAE: 0.4296
+2025-04-21 14:06:59,515 - INFO - Epoch [91/100], Train Loss: 0.0105, Val Loss: 0.0502, Val SRCC: 0.4703, Val PCC: 0.5322, Val RMSE: 0.2241, Val RMAE: 0.4296
+2025-04-21 14:06:59,751 - INFO - Epoch [92/100], Train Loss: 0.0092, Val Loss: 0.0517, Val SRCC: 0.4658, Val PCC: 0.5244, Val RMSE: 0.2275, Val RMAE: 0.4310
+2025-04-21 14:07:00,016 - INFO - Epoch [93/100], Train Loss: 0.0103, Val Loss: 0.0544, Val SRCC: 0.4603, Val PCC: 0.5095, Val RMSE: 0.2332, Val RMAE: 0.4367
+2025-04-21 14:07:00,285 - INFO - Epoch [94/100], Train Loss: 0.0103, Val Loss: 0.0532, Val SRCC: 0.4831, Val PCC: 0.5296, Val RMSE: 0.2307, Val RMAE: 0.4354
+2025-04-21 14:07:00,557 - INFO - Epoch [95/100], Train Loss: 0.0098, Val Loss: 0.0471, Val SRCC: 0.4620, Val PCC: 0.5411, Val RMSE: 0.2171, Val RMAE: 0.4283
+2025-04-21 14:07:00,824 - INFO - Epoch [96/100], Train Loss: 0.0095, Val Loss: 0.0495, Val SRCC: 0.4720, Val PCC: 0.5389, Val RMSE: 0.2226, Val RMAE: 0.4285
+2025-04-21 14:07:01,096 - INFO - Epoch [97/100], Train Loss: 0.0086, Val Loss: 0.0499, Val SRCC: 0.4744, Val PCC: 0.5303, Val RMSE: 0.2233, Val RMAE: 0.4309
+2025-04-21 14:07:01,366 - INFO - Epoch [98/100], Train Loss: 0.0087, Val Loss: 0.0500, Val SRCC: 0.4784, Val PCC: 0.5428, Val RMSE: 0.2236, Val RMAE: 0.4303
+2025-04-21 14:07:01,565 - INFO - Epoch [99/100], Train Loss: 0.0089, Val Loss: 0.0489, Val SRCC: 0.4788, Val PCC: 0.5384, Val RMSE: 0.2211, Val RMAE: 0.4299
+2025-04-21 14:07:01,765 - INFO - Epoch [100/100], Train Loss: 0.0087, Val Loss: 0.0491, Val SRCC: 0.4802, Val PCC: 0.5578, Val RMSE: 0.2217, Val RMAE: 0.4285
+2025-04-21 14:07:01,765 - INFO - Training finished.
+2025-04-21 14:07:01,922 - INFO - Loss curve saved to /home/wallacelab/investigating-complexity/output/run_20250421_140635/training_loss_curve.png
+2025-04-21 14:07:02,046 - INFO - Spearman correlation curve saved to /home/wallacelab/investigating-complexity/output/run_20250421_140635/spearman_correlation_curve.png
+2025-04-21 14:07:02,047 - INFO - Starting final evaluation on test set...
+2025-04-21 14:07:02,074 - INFO - Test Loss (MSE): 0.0417
+2025-04-21 14:07:02,074 - INFO - Test MAE: 0.1664
+2025-04-21 14:07:02,074 - INFO - Test RMSE: 0.2042
+2025-04-21 14:07:02,074 - INFO - Test RMAE: 0.4079
+2025-04-21 14:07:02,074 - INFO - Test SRCC: 0.5590
+2025-04-21 14:07:02,074 - INFO - Test PCC: 0.5569
+2025-04-21 14:07:02,103 - INFO - Evaluation finished.
+2025-04-21 14:07:02,242 - INFO - Prediction scatter plot saved to /home/wallacelab/investigating-complexity/output/run_20250421_140635/test_predictions_scatter.png
+2025-04-21 14:07:02,246 - INFO - Model state saved to /home/wallacelab/investigating-complexity/output/run_20250421_140635/transformer_predictor_state.pth
+2025-04-21 14:07:02,246 - INFO - Training script finished.

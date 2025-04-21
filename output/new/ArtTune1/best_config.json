@@ -1,0 +1,9 @@
+{
+    "d_model": 128,
+    "nhead": 2,
+    "num_encoder_layers": 4,
+    "dim_feedforward": 512,
+    "dropout": 0.08827846643494253,
+    "lr": 0.0001503834362880837,
+    "weight_decay": 2.5802306259218182e-05
+}
